@@ -15,7 +15,7 @@ use Zend\I18n\Translator\Translator;
 use TwbBundle\Options\ModuleOptions;
 use Zend\Form\Element\Button;
 
-class TwbBundleFormElement extends FormElement implements TranslatorAwareInterface
+class TwbBundleFormElement extends FormElement
 {
     /**
      * @var string
