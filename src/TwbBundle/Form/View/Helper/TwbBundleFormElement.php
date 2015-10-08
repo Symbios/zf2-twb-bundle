@@ -2,7 +2,7 @@
 
 namespace TwbBundle\Form\View\Helper;
 
-class TwbBundleFormElement extends \Zend\Form\View\Helper\FormElement implements \Zend\I18n\Translator\TranslatorAwareInterface {
+class TwbBundleFormElement extends \Zend\Form\View\Helper\FormElement {
 
     /**
      * @var string
