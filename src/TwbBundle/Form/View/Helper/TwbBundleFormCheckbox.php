@@ -32,35 +32,74 @@ class TwbBundleFormCheckbox extends \Zend\Form\View\Helper\FormCheckbox
         ));
 
         $aAttributes = $oElement->getAttributes();
-        $aAttributes['name'] = $sName;
-        $aAttributes['type'] = $this->getInputType();
-        $aAttributes['value'] = $oElement->getCheckedValue();
-        $sClosingBracket = $this->getInlineClosingBracket();
 
-        if ($oElement->isChecked()) $aAttributes['checked'] = 'checked';
+        if(isset($aAttributes['twbBundle']) && $aAttributes['twbBundle']){
+            $aAttributes['name'] = $sName;
+            $aAttributes['type'] = $this->getInputType();
+            $aAttributes['value'] = $oElement->getCheckedValue();
+            $sClosingBracket = $this->getInlineClosingBracket();
 
-        //Render label and visible element
-        if (($sLabel = $oElement->getLabel()) && ($oTranslator = $this->getTranslator())) $sLabel = $oTranslator->translate($sLabel, $this->getTranslatorTextDomain());
-        $oLabelHelper = $this->getLabelHelper();
+            if ($oElement->isChecked()) $aAttributes['checked'] = 'checked';
 
-        $sElementContent = '';
-        if ($sLabel) $sElementContent .= $oLabelHelper->openTag($oElement->getLabelAttributes() ? : null);
-        $sElementContent .= sprintf(
-            '<input %s%s',
-            $this->createAttributesString($aAttributes),
-            $sClosingBracket
-        );
-        if ($sLabel) $sElementContent .= $sLabel . $oLabelHelper->closeTag();
+            //Render label and visible element
+            if (($sLabel = $oElement->getLabel()) && ($oTranslator = $this->getTranslator())) $sLabel = $oTranslator->translate($sLabel, $this->getTranslatorTextDomain());
+            $oLabelHelper = $this->getLabelHelper();
 
-        //Render hidden input
-        if ($oElement->useHiddenElement()) $sElementContent = sprintf(
-                '<input type="hidden" %s%s',
-                $this->createAttributesString(array(
-                    'name' => $aAttributes['name'],
-                    'value' => $oElement->getUncheckedValue(),
-                )), $sClosingBracket
-            ) . $sElementContent;
-        return $oElement->getOption('disable-twb') ? $sElementContent : sprintf(self::$checkboxFormat, $sElementContent);
+            $sElementContent = '';
+            if ($sLabel) $sElementContent .= $oLabelHelper->openTag($oElement->getLabelAttributes() ? : null);
+            $sElementContent .= sprintf(
+                '<input %s%s',
+                $this->createAttributesString($aAttributes),
+                $sClosingBracket
+            );
+            if ($sLabel) $sElementContent .= $sLabel . $oLabelHelper->closeTag();
+
+            //Render hidden input
+            if ($oElement->useHiddenElement()) $sElementContent = sprintf(
+                    '<input type="hidden" %s%s',
+                    $this->createAttributesString(array(
+                        'name' => $aAttributes['name'],
+                        'value' => $oElement->getUncheckedValue(),
+                    )), $sClosingBracket
+                ) . $sElementContent;
+            return $oElement->getOption('disable-twb') ? $sElementContent : sprintf(self::$checkboxFormat, $sElementContent);
+        }else{
+
+            $element = $oElement;
+            $name = $sName;
+
+            $attributes            = $element->getAttributes();
+            $attributes['name']    = $name;
+            $attributes['type']    = $this->getInputType();
+            $attributes['value']   = $element->getCheckedValue();
+            $closingBracket        = $this->getInlineClosingBracket();
+
+            if ($element->isChecked()) {
+                $attributes['checked'] = 'checked';
+            }
+
+            $rendered = sprintf(
+                '<input %s%s',
+                $this->createAttributesString($attributes),
+                $closingBracket
+            );
+
+            if ($element->useHiddenElement()) {
+                $hiddenAttributes = array(
+                    'name'  => $attributes['name'],
+                    'value' => $element->getUncheckedValue(),
+                );
+
+                $rendered = sprintf(
+                        '<input type="hidden" %s%s',
+                        $this->createAttributesString($hiddenAttributes),
+                        $closingBracket
+                    ) . $rendered;
+            }
+
+            return $rendered;
+        }
+
     }
 
 
