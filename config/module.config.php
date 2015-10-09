@@ -23,35 +23,35 @@ return array(
     'view_helpers' => array (
         'invokables' => array (
             //Alert
-            'twbAlert' => 'TwbBundle\View\Helper\TwbBundleAlert',
+            'alert' => 'TwbBundle\View\Helper\TwbBundleAlert',
             //Badge
-            'twbBadge' => 'TwbBundle\View\Helper\TwbBundleBadge',
+            'badge' => 'TwbBundle\View\Helper\TwbBundleBadge',
             //Button group
-            'twbButtonGroup' => 'TwbBundle\View\Helper\TwbBundleButtonGroup',
+            'buttonGroup' => 'TwbBundle\View\Helper\TwbBundleButtonGroup',
             //DropDown
-            'twbDropDown' => 'TwbBundle\View\Helper\TwbBundleDropDown',
+            'dropDown' => 'TwbBundle\View\Helper\TwbBundleDropDown',
             //Form
-            'twbForm' => 'TwbBundle\Form\View\Helper\TwbBundleForm',
-            'twbFormButton' => 'TwbBundle\Form\View\Helper\TwbBundleFormButton',
-            'twbFormSubmit' => 'TwbBundle\Form\View\Helper\TwbBundleFormButton',
-            'twbFormCheckbox' => 'TwbBundle\Form\View\Helper\TwbBundleFormCheckbox',
-            'twbFormCollection' => 'TwbBundle\Form\View\Helper\TwbBundleFormCollection',
-            'twbFormElementErrors' => 'TwbBundle\Form\View\Helper\TwbBundleFormElementErrors',
-            'twbFormMultiCheckbox' => 'TwbBundle\Form\View\Helper\TwbBundleFormMultiCheckbox',
-            'twbFormRadio' => 'TwbBundle\Form\View\Helper\TwbBundleFormRadio',
-            'twbFormRow' => 'TwbBundle\Form\View\Helper\TwbBundleFormRow',
-            'twbFormStatic' => 'TwbBundle\Form\View\Helper\TwbBundleFormStatic',
+            'form' => 'TwbBundle\Form\View\Helper\TwbBundleForm',
+            'formButton' => 'TwbBundle\Form\View\Helper\TwbBundleFormButton',
+            'formSubmit' => 'TwbBundle\Form\View\Helper\TwbBundleFormButton',
+            'formCheckbox' => 'TwbBundle\Form\View\Helper\TwbBundleFormCheckbox',
+            'formCollection' => 'TwbBundle\Form\View\Helper\TwbBundleFormCollection',
+            'formElementErrors' => 'TwbBundle\Form\View\Helper\TwbBundleFormElementErrors',
+            'formMultiCheckbox' => 'TwbBundle\Form\View\Helper\TwbBundleFormMultiCheckbox',
+            'formRadio' => 'TwbBundle\Form\View\Helper\TwbBundleFormRadio',
+            'formRow' => 'TwbBundle\Form\View\Helper\TwbBundleFormRow',
+            'formStatic' => 'TwbBundle\Form\View\Helper\TwbBundleFormStatic',
             //Form Errors
-            'twbFormErrors' => 'TwbBundle\Form\View\Helper\TwbBundleFormErrors',
+            'formErrors' => 'TwbBundle\Form\View\Helper\TwbBundleFormErrors',
             //Glyphicon
-            'twbGlyphicon' => 'TwbBundle\View\Helper\TwbBundleGlyphicon',
+            'glyphicon' => 'TwbBundle\View\Helper\TwbBundleGlyphicon',
             //FontAwesome
-            'twbFontAwesome' => 'TwbBundle\View\Helper\TwbBundleFontAwesome',
+            'fontAwesome' => 'TwbBundle\View\Helper\TwbBundleFontAwesome',
             //Label
-            'twbLabel' => 'TwbBundle\View\Helper\TwbBundleLabel'
+            'label' => 'TwbBundle\View\Helper\TwbBundleLabel'
         ),
         'factories' => array (
-            'twbFormElement' => 'TwbBundle\Form\View\Helper\Factory\TwbBundleFormElementFactory',
+            'formElement' => 'TwbBundle\Form\View\Helper\Factory\TwbBundleFormElementFactory',
         )
     ),
 );
