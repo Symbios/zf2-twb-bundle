@@ -21,6 +21,7 @@ class TwbBundleFormRadio extends \Symbios\Zend\Form\View\Helper\FormRadio {
      * @return string
      */
     public function render(\Zend\Form\ElementInterface $oElement) {
+        /*
         if ($oElement->getOption('disable-twb')) {
             $sSeparator = $this->separator;
             $this->separator = '';
@@ -28,7 +29,9 @@ class TwbBundleFormRadio extends \Symbios\Zend\Form\View\Helper\FormRadio {
             $this->separator = $sSeparator;
             return $sReturn;
         }
-        return sprintf(self::$checkboxFormat, parent::render($oElement));
+        */
+        //return sprintf(self::$checkboxFormat, parent::render($oElement));
+        return parent::render($oElement);
     }
 
     /**
@@ -39,7 +42,7 @@ class TwbBundleFormRadio extends \Symbios\Zend\Form\View\Helper\FormRadio {
      * @param array $aAttributes
      * @return string
      */
-    protected function renderOptions(\Zend\Form\Element\MultiCheckbox $oElement, array $aOptions, array $aSelectedOptions, array $aAttributes) {
+    public function renderOptions(\Zend\Form\Element\MultiCheckbox $oElement, array $aOptions, array $aSelectedOptions, array $aAttributes) {
         $iIterator = 0;
         $aGlobalLabelAttributes = $oElement->getLabelAttributes()? : $this->labelAttributes;
         $sMarkup = '';
