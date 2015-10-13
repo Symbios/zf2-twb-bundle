@@ -19,7 +19,7 @@ return array(
 			'formElement' => 'TwbBundle\Form\View\Helper\TwbBundleFormElement',
 			'formElementErrors' => 'TwbBundle\Form\View\Helper\TwbBundleFormElementErrors',
 			'formMultiCheckbox' => 'TwbBundle\Form\View\Helper\TwbBundleFormMultiCheckbox',
-			//'formRadio' => 'TwbBundle\Form\View\Helper\TwbBundleFormRadio',
+			'formRadio' => 'TwbBundle\Form\View\Helper\TwbBundleFormRadio',
 			'formRow' => 'TwbBundle\Form\View\Helper\TwbBundleFormRow',
 			'formStatic' => 'TwbBundle\Form\View\Helper\TwbBundleFormStatic',
 
