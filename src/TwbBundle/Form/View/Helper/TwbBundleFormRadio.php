@@ -2,7 +2,7 @@
 
 namespace TwbBundle\Form\View\Helper;
 
-class TwbBundleFormRadio extends \Zend\Form\View\Helper\FormRadio {
+class TwbBundleFormRadio extends \Symbios\Zend\Form\View\Helper\FormRadio {
 
     /**
      * Separator for checkbox elements
